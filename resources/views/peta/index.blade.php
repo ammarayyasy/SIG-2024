@@ -11,6 +11,7 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
     <body>
+        <h1 style="text-align: center;">DATA PROVINSI DI INDONESIA</h1>
         <div id="map"></div>
         <script>
             var map = L.map('map').setView([-0.3155398750904368, 117.1371634207888], 5);
