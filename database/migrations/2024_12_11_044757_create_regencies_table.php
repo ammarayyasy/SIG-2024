@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('alt_name');
             $table->double('latitude')->default(0);
             $table->double('longitude')->default(0);
+            $table->bigInteger('population')->nullable();
+            $table->enum('type_polygon', ['Polygon', 'MultiPolygon'])->default('Polygon')->nullable();
+            $table->longText('polygon')->nullable();
             
             // Define foreign key to provinces
             $table->foreignId('province_id')->constrained('provinces')->onDelete('cascade');

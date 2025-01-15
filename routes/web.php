@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PetaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegencyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,5 +24,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/peta', [PetaController::class, 'index']);
+
+Route::get('/populasi', [RegencyController::class, 'populasi']);
+Route::get('/populasi/{province_id}', [RegencyController::class, 'populasiById']);
 
 require __DIR__.'/auth.php';
