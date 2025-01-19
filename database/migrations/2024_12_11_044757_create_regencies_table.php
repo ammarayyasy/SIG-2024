@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 return new class extends Migration
 {
@@ -18,6 +19,9 @@ return new class extends Migration
             $table->double('latitude')->default(0);
             $table->double('longitude')->default(0);
             $table->bigInteger('population')->nullable();
+            $table->double('pernikahan')->default(0)->nullable();
+            $table->double('perceraian')->default(0)->nullable();
+            $table->double('kelahiran')->default(0)->nullable();
             $table->enum('type_polygon', ['Polygon', 'MultiPolygon'])->default('Polygon')->nullable();
             $table->longText('polygon')->nullable();
             

@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="aYX6CYDo0kFyI2Yuy9wXRx1YjbMU6zhB6jCJmE4U">
-    <title>Kepadatan Penduduk</title>
+    <title>Tingkat perceraian</title>
     <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -161,8 +161,8 @@
     <div id="info-popup">
         <div class="popup-content">
             <h4>Info Halaman</h4>
-            <p>Ini adalah halaman kepadatan penduduk di Provinsi {{ $province->name }}. Anda dapat melihat peta interaktif dengan data
-                kepadatan penduduk berdasarkan kabupaten/kota.</p>
+            <p>Ini adalah halaman tingkat perceraian per 1000 penduduk di Provinsi {{ $province->name }}. Anda dapat melihat peta interaktif dengan data
+                tingkat perceraian per 1000 penduduk berdasarkan kabupaten/kota.</p>
             <button id="close-popup">Tutup</button>
             <a href="/" id="back-popup">Kembali ke beranda</a>
         </div>
@@ -195,20 +195,19 @@
         };
 
         info.update = function (props) {
-            const contents = props ? `<b>${props.name}</b><br />${props.density.toLocaleString('id-ID')} people / km<sup>2</sup>` : 'Hover over a regency';
-            this._div.innerHTML = `<h4>Kepadatan Penduduk Kab/Kota ${provinsi.name}</h4>${contents}`;
+            const contents = props ? `<b>${props.name}</b><br />${props.divorce.toLocaleString('id-ID')} per 1000 penduduk` : 'Hover over a regency';
+            this._div.innerHTML = `<h4>Tingkat perceraian Penduduk Kab/Kota ${provinsi.name}</h4>${contents}`;
         };
 
         info.addTo(map);
 
         function getColor(d) {
-            return d > 5000 ? '#800026' :
-                d > 2000 ? '#BD0026' :
-                d > 1000 ? '#E31A1C' :
-                d > 500  ? '#FD8D3C' :
-                            '#FFEDA0';
-}
-
+            return d > 0.12 ? '#004d00' :  // Sangat Tinggi (Hijau Gelap)
+                d > 0.08 ? '#248f24' :  // Tinggi (Hijau Sedang)
+                d > 0.04 ? '#4db84d' :  // Sedang (Hijau Terang)
+                d > 0.02 ? '#adebad' :  // Rendah (Hijau Pucat)
+                            '#e6ffe6';   // Sangat Rendah (Hijau Sangat Pucat)
+        }
 
         function style(feature) {
             return {
@@ -217,7 +216,7 @@
                 color: 'white',
                 dashArray: '3',
                 fillOpacity: 0.7,
-                fillColor: getColor(feature.properties.density)
+                fillColor: getColor(feature.properties.divorce)
             };
         }
 
@@ -238,12 +237,12 @@
 
         const regencies = @json($regencies);
 
-        const regencyData = regencies.map(regency => ({
+        const regencyData = regencies.map(regency =>    ({
             type: "Feature",
             properties: {
                 name: regency.name,
                 id: regency.id,
-                density: regency.population,
+                divorce: regency.perceraian,
             },
             geometry: {
                 type: regency.type_polygon,
@@ -288,9 +287,8 @@
         const legend = L.control({position: 'bottomright'});
 
         legend.onAdd = function (map) {
-
             const div = L.DomUtil.create('div', 'info legend');
-            const grades = [0, 500, 1000, 2000, 5000];
+            const grades = [0, 0.02, 0.04, 0.08, 0.12];
             const labels = [];
             let from, to;
 
@@ -298,12 +296,16 @@
                 from = grades[i];
                 to = grades[i + 1];
 
-                labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+                // Tambahkan label untuk rentang
+                labels.push(
+                    `<i style="background:${getColor(from)}"></i> ${from.toFixed(2)}${to ? `&ndash;${to.toFixed(2)}` : '+'}`
+                );
             }
 
             div.innerHTML = labels.join('<br>');
             return div;
         };
+
 
         legend.addTo(map);
     </script>

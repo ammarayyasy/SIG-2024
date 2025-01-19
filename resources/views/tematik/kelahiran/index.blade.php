@@ -4,7 +4,7 @@
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">Welcome To Our Studio!</div>
-        <div class="masthead-heading text-uppercase">kepadatan</div>
+        <div class="masthead-heading text-uppercase">kelahiran</div>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="provinceSelect">
             <option selected>Pilih provinsi</option>
             @foreach ($provinces as $province)
@@ -18,7 +18,7 @@
     document.getElementById('provinceSelect').addEventListener('change', function() {
         var provinceId = this.value;
         if (provinceId) {
-            window.location.href = '/populasi/' + provinceId;
+            window.location.href = '/kelahiran/' + provinceId;
         }
     });
 </script>

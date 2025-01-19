@@ -28,4 +28,13 @@ Route::get('/peta', [PetaController::class, 'index']);
 Route::get('/populasi', [RegencyController::class, 'populasi']);
 Route::get('/populasi/{province_id}', [RegencyController::class, 'populasiById']);
 
+Route::get('/pernikahan', [RegencyController::class, 'pernikahan']);
+Route::get('/pernikahan/{province_id}', [RegencyController::class, 'pernikahanById']);
+
+Route::get('/perceraian', [RegencyController::class, 'perceraian']);
+Route::get('/perceraian/{province_id}', [RegencyController::class, 'perceraianById']);
+
+Route::get('/kelahiran', [RegencyController::class, 'kelahiran']);
+Route::get('/kelahiran/{province_id}', [RegencyController::class, 'kelahiranById']);
+
 require __DIR__.'/auth.php';

@@ -38,16 +38,40 @@ class RegencyResource extends Resource
                     ->required()
                     ->numeric()
                     ->default(0),
+                Forms\Components\TextInput::make('population')
+                    ->numeric()
+                    ->label('Population')
+                    ->nullable(),
+                Forms\Components\TextInput::make('pernikahan')
+                    ->numeric()
+                    ->label('Pernikahan')
+                    ->nullable(),
+                Forms\Components\TextInput::make('perceraian')
+                    ->numeric()
+                    ->label('Perceraian')
+                    ->nullable(),
+                Forms\Components\TextInput::make('kelahiran')
+                    ->numeric()
+                    ->label('Kelahiran')
+                    ->nullable(),
+                Forms\Components\Select::make('type_polygon')
+                    ->label('Type Polygon')
+                    ->options([
+                        'Polygon' => 'Polygon',
+                        'MultiPolygon' => 'MultiPolygon',
+                    ])
+                    ->default('Polygon'),
+                Forms\Components\Textarea::make('polygon')
+                    ->label('Polygon Data')
+                    ->nullable(),
                 Forms\Components\Select::make('province_id')
                     ->required()
                     ->options(
                         \App\Models\Province::all()->pluck('name', 'id')
                     ),
-                // Forms\Components\TextInput::make('province_id')
-                //     ->required()
-                //     ->numeric(),
             ]);
     }
+    
 
     public static function table(Table $table): Table
     {
@@ -63,10 +87,24 @@ class RegencyResource extends Resource
                 Tables\Columns\TextColumn::make('longitude')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('population')
+                    ->numeric()
+                    ->label('Population'),
+                Tables\Columns\TextColumn::make('pernikahan')
+                    ->numeric()
+                    ->label('Pernikahan'),
+                Tables\Columns\TextColumn::make('perceraian')
+                    ->numeric()
+                    ->label('Perceraian'),
+                Tables\Columns\TextColumn::make('kelahiran')
+                    ->numeric()
+                    ->label('Kelahiran'),
+                Tables\Columns\TextColumn::make('type_polygon')
+                    ->label('Type Polygon'),
                 Tables\Columns\TextColumn::make('province.name')
                     ->label('Province')
                     ->searchable()
-                    ->sortable(),                
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -87,7 +125,7 @@ class RegencyResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
-    }
+    }    
 
     public static function getRelations(): array
     {

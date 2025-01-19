@@ -4,8 +4,8 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Our Studio!</div>
-            <div style="margin-bottom: 10rem" class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <div class="masthead-subheading">Selamat datang di Peta Tematik</div>
+            <div style="margin-bottom: 10rem" class="masthead-heading text-uppercase">YOGYAKARTA</div>
             {{-- <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a> --}}
         </div>
     </header>
@@ -14,56 +14,59 @@
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">About</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Sejarah</h2>
+                <h3 class="section-subheading text-muted">Garis besar sejarah provinsi Yogyakarta.</h3>
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/1.jpg') }}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/mataram.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>800 - 1000 M</h4>
+                            <h4 class="subheading">Masa Kerajaan Mataram</h4>
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Yogyakarta memiliki akar sejarah yang kuat sejak era Kerajaan Mataram Kuno pada abad ke-8 hingga ke-10, yang menjadi pusat perkembangan Hindu-Buddha di Jawa. Bukti kejayaan masa ini terlihat dari peninggalan bersejarah seperti Candi Borobudur dan Candi Prambanan.
+                            </p>
+                    </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/2.jpg') }}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/perjanjian.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
+                            <h4>Februari 1755</h4>
+                            <h4 class="subheading">Perjanjian Giyanti</h4>
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body"><p class="text-muted">Melalui Perjanjian Giyanti, Kesultanan Mataram dibagi menjadi dua, yaitu Kesultanan Yogyakarta yang dipimpin oleh Sultan Hamengkubuwono I dan Kasunanan Surakarta. Peristiwa ini menjadi titik awal berdirinya Kesultanan Yogyakarta sebagai entitas politik yang berdaulat.</p></div>
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/3.jpg') }}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/dukungan.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>December 2015</h4>
-                            <h4 class="subheading">Transition to Full Service</h4>
+                            <h4>Februari 1945</h4>
+                            <h4 class="subheading">Dukungan terhadap Kemerdekaan Indonesia</h4>
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body"><p class="text-muted">Setelah Indonesia memproklamasikan kemerdekaannya, Sultan Hamengkubuwono IX dan Sri Paku Alam VIII mendukung penuh Republik Indonesia. Yogyakarta kemudian menjadi bagian integral dari NKRI dan mendapat pengakuan sebagai daerah istimewa.</p></div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/4.jpg') }}" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('img/about/merdeka.jpg') }}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>July 2020</h4>
-                            <h4 class="subheading">Phase Two Expansion</h4>
+                            <h4>1950</h4>
+                            <h4 class="subheading">Penetapan Daerah Istimewa Yogyakarta</h4>
                         </div>
-                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                        <div class="timeline-body"><p class="text-muted">Yogyakarta secara resmi ditetapkan sebagai Daerah Istimewa pada tahun 1950 dengan pengakuan atas peran Kesultanan Yogyakarta dan Kadipaten Pakualaman dalam pemerintahan daerah. Status ini kemudian diperkuat dengan Undang-Undang Nomor 13 Tahun 2012.</p></div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
-                            Be Part
+                            Present
                             <br />
-                            Of Our
+                            past
                             <br />
                             Story!
                         </h4>
@@ -82,9 +85,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/1.jpg') }}" alt="..." />
-                        <h4>Parveen Anand</h4>
-                        <p class="text-muted">Lead Designer</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/ammar.jpeg') }}" alt="..." />
+                        <h4>M. Ammar Ayyasy</h4>
+                        <p class="text-muted">0110221082</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -92,9 +95,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/2.jpg') }}" alt="..." />
-                        <h4>Diana Petersen</h4>
-                        <p class="text-muted">Lead Marketer</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/zahra.jpg') }}" alt="..." />
+                        <h4>Adzhimatinur Az Zahra</h4>
+                        <p class="text-muted">0110221075</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -102,9 +105,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/3.jpg') }}" alt="..." />
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Developer</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/miqdad.jpeg') }}" alt="..." />
+                        <h4>Muhammad Miqdad</h4>
+                        <p class="text-muted">0110221256</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -112,9 +115,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/3.jpg') }}" alt="..." />
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Developer</p>
+                        <img class="mx-auto rounded-circle" src="{{ asset('img/team/abi.jpg') }}" alt="..." />
+                        <h4>Restu Abie Sucipto</h4>
+                        <p class="text-muted">0110221093</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
